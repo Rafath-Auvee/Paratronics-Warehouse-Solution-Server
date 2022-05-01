@@ -19,14 +19,47 @@ const uri = `mongodb+srv://${process.env.user}:${process.env.password}@cluster0.
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  console.log("DB Connected")
-  // perform actions on the collection object
-  client.close();
-});
+// client.connect(err => {
+//   const data = client.db("Paratronics").collection("products");
+//   console.log("DB Connected")
+//   client.close();
+// });
+
+// app.get("/products", async(req,res)=>{
+//   const query = {};
+//   const cursor = data.find(query)
+//   products = await cursor.toArray();
+//   res.send(products)
+//   console.log(query)
+//   console.log(cursor)
+//   console.log(products)
+// })
 
 
+async function run () {
+  try{
+      await client.connect()
+      const data = client.db("Paratronics").collection("products");
+      console.log("DB Connected");
+      app.get("/products", async(req,res)=>{
+      const query = {};
+      const cursor = data.find(query)
+      products = await cursor.toArray();
+      res.send(products)
+
+
+      console.log(query)
+      // console.log(cursor)
+      // console.log(products)
+    })  
+  }
+  finally
+  {
+
+  }
+}
+
+run().catch(console.dir)
 
 app.get("/", (req,res)=>{
   res.send("Paratronics Server is Running");

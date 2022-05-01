@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Samsung Android Smartphone",
+    "color": "Black",
+    "quantity": 10,
+    "supplier_name": "Kendra Gaw",
+    "url": "https://i.ibb.co/QdTPF4n/pexels-noah-erickson-404280.jpg",
+    "price": 39723
+  },
+  {
+    "name": "Polaroid 03",
+    "color": "Ash",
+    "quantity": 14,
+    "supplier_name": "Amata Jirieck",
+    "url": "https://i.ibb.co/PWsbD4r/photo-1526170375885-4d8ecf77b99f-ixlib-rb-1-2.jpg",
+    "price": 25956
+  },
+  {
+    "name": "Canon, EOS 6D",
+    "color": "Black",
+    "quantity": 5,
+    "supplier_name": "Daffi Pfiffer",
+    "url": "https://i.ibb.co/8XLCXVn/photo-1612548403247-aa2873e9422d-ixlib-rb-1-2.jpg",
+    "price": 57856
+  },
+  {
+    "name": "iPhone 13 Pro",
+    "color": "Chromium",
+    "quantity": 6,
+    "supplier_name": "Apple",
+    "url": "https://i.ibb.co/Xk3STNK/photo-1616348436168-de43ad0db179-ixlib-rb-1-2.jpg",
+    "price": 98134
+  },
+  {
+    "name": "Mac book Air",
+    "color": "Aquamarine",
+    "quantity": 9,
+    "supplier_name": "Hieronymus Lidgett",
+    "url": "https://i.ibb.co/M1YkzF5/photo-1540815435778-aa03acf4bcbc-ixlib-rb-1-2.jpg",
+    "price": 43430
+  },
+  {
+    "name": "Acer Aspire A315-21 15.6″ HD Laptop",
+    "color": "Green",
+    "quantity": 18,
+    "supplier_name": "Boy Avramovich",
+    "url": "https://i.ibb.co/85n3dVj/pexels-photo-1229861-jpeg-cs-srgb-dl-pexels-hasan-albari-1229861.jpg",
+    "price": 14584
+  },
+  {
+    "name": "HP AMD Dual Core Laptop",
+    "color": "Maroon",
+    "quantity": 19,
+    "supplier_name": "Elsinore Hardstaff",
+    "url": "https://i.ibb.co/84b1S0J/pexels-photo-4067506.jpg",
+    "price": 54154
+  },
+  {
+    "name": "Lenovo IdeaPad Intel 11.6″ Laptop",
+    "color": "Green",
+    "quantity": 10,
+    "supplier_name": "Reina Bleythin",
+    "url": "https://i.ibb.co/y6wCTCd/pexels-photo-943596-jpeg-cs-srgb-dl-pexels-archie-binamira-943596.jpg",
+    "price": 5429
+  },
+  {
+    "name": "Macbook Pro",
+    "color": "Fuscia",
+    "quantity": 14,
+    "supplier_name": "Clemence Haslock",
+    "url": "https://i.ibb.co/8PTN1YR/pexels-photo-129208-jpeg-cs-srgb-dl-pexels-nao-triponez-129208.jpg",
+    "price": 60174
+  },
+  {
+    "name": "Black Sony Ps2 Dualshock 2",
+    "color": "Turquoise",
+    "quantity": 12,
+    "supplier_name": "Lemmy Le Marquis",
+    "url": "https://i.ibb.co/VjJQ3Zp/pexels-photo-1579240.jpg",
+    "price": 40136
+  },
+  {
+    "name": "Black Apple Watch",
+    "color": "Goldenrod",
+    "quantity": 1,
+    "supplier_name": "Sephira Labrom",
+    "url": "https://i.ibb.co/5MB2dQP/pexels-photo-440320.jpg",
+    "price": 75196
+  },
+  {
+    "name": "Panasonic NR-F681GT Refrigerators",
+    "color": "Green",
+    "quantity": 2,
+    "supplier_name": "Milton Cohrs",
+    "url": "https://i.ibb.co/D5hthVn/photo-1630459065645-549fe5a56db4-ixlib-rb-1-2.jpg",
+    "price": 27944
+  }
+]
