@@ -1,5 +1,5 @@
 // importing and setup 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -46,11 +46,7 @@ async function run () {
       const cursor = data.find(query)
       products = await cursor.toArray();
       res.send(products)
-
-
       console.log(query)
-      // console.log(cursor)
-      // console.log(products)
     })  
   }
   finally
