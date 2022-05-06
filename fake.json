@@ -1,7 +1,7 @@
 [
   {
     "name": "Samsung Android Smartphone",
-    "color": "Black",
+    "description": "Explore full range of galaxy mobile devices and android smartphones. Buy 3G, 4G, dual sim, touch screen smartphone at best prices in Bangladesh.",
     "quantity": 10,
     "supplier_name": "Kendra Gaw",
     "url": "https://i.ibb.co/QdTPF4n/pexels-noah-erickson-404280.jpg",
@@ -9,7 +9,7 @@
   },
   {
     "name": "Polaroid 03",
-    "color": "Ash",
+    "description": "Instant film with classic white frame / Format: length 3.4” × height 4.25” / Image area : length 3.1” × height 3.1”; Asa 640 - The more light in your shot",
     "quantity": 14,
     "supplier_name": "Amata Jirieck",
     "url": "https://i.ibb.co/PWsbD4r/photo-1526170375885-4d8ecf77b99f-ixlib-rb-1-2.jpg",
@@ -17,7 +17,7 @@
   },
   {
     "name": "Canon, EOS 6D",
-    "color": "Black",
+    "descriptionr": "Canon Eos 6D; 20.2MP full frame CMOS sensor; DIGIC 5+ image processor; 1920 x 1080 30 fps/25fps/24fps; 4.5 fps continuous shooting",
     "quantity": 5,
     "supplier_name": "Daffi Pfiffer",
     "url": "https://i.ibb.co/8XLCXVn/photo-1612548403247-aa2873e9422d-ixlib-rb-1-2.jpg",
@@ -25,15 +25,15 @@
   },
   {
     "name": "iPhone 13 Pro",
-    "color": "Chromium",
+    "description": "Apple iPhone 13 Pro smartphone. Announced Sep 2021. Features 6.1″ display, Apple A15 Bionic chipset, 3095 mAh battery, 1024 GB storage, 6 GB RAM",
     "quantity": 6,
     "supplier_name": "Apple",
     "url": "https://i.ibb.co/Xk3STNK/photo-1616348436168-de43ad0db179-ixlib-rb-1-2.jpg",
     "price": 98134
   },
   {
-    "name": "Mac book Air",
-    "color": "Aquamarine",
+    "name": "Macbook Air",
+    "description": "The M1 chip and macOS Monterey work together to make the entire system snappier. MacBook Air wakes instantly from sleep.",
     "quantity": 9,
     "supplier_name": "Hieronymus Lidgett",
     "url": "https://i.ibb.co/M1YkzF5/photo-1540815435778-aa03acf4bcbc-ixlib-rb-1-2.jpg",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Acer Aspire A315-21 15.6″ HD Laptop",
-    "color": "Green",
+    "description": "Acer Aspire A315-21 28F1 AMD E2-9000 15.6 HD Laptop ; Display, 15.6” HD Acer ComfyView LCD Backlight LED ; Memory, 4GB DDR4 1600MHz",
     "quantity": 18,
     "supplier_name": "Boy Avramovich",
     "url": "https://i.ibb.co/85n3dVj/pexels-photo-1229861-jpeg-cs-srgb-dl-pexels-hasan-albari-1229861.jpg",
@@ -49,7 +49,7 @@
   },
   {
     "name": "HP AMD Dual Core Laptop",
-    "color": "Maroon",
+    "description": "HP 15-db0083AX AMD Dual Core , 4GB RAM , 500GB HDD , 15.6 Inch HD Laptop with Genuine Windows 10. Model: HP 15-db0083AX",
     "quantity": 19,
     "supplier_name": "Elsinore Hardstaff",
     "url": "https://i.ibb.co/84b1S0J/pexels-photo-4067506.jpg",
@@ -57,7 +57,7 @@
   },
   {
     "name": "Lenovo IdeaPad Intel 11.6″ Laptop",
-    "color": "Green",
+    "description": "HP 15-db0083AX AMD Dual Core 15.6 Inch HD Laptop with Genuine Windows 10 ; Processor, AMD Dual Core A4-9125 (1MB Cache , Base frequency 2.30GHz up to 2.6GHz)",
     "quantity": 10,
     "supplier_name": "Reina Bleythin",
     "url": "https://i.ibb.co/y6wCTCd/pexels-photo-943596-jpeg-cs-srgb-dl-pexels-archie-binamira-943596.jpg",
@@ -65,7 +65,7 @@
   },
   {
     "name": "Macbook Pro",
-    "color": "Fuscia",
+    "description": "13-inch MacBook Pro is completely transformed by the M1 chip. Up to 2.8x faster CPU. Up to 5x faster graphics. And up to 20 hours of battery life.",
     "quantity": 14,
     "supplier_name": "Clemence Haslock",
     "url": "https://i.ibb.co/8PTN1YR/pexels-photo-129208-jpeg-cs-srgb-dl-pexels-nao-triponez-129208.jpg",
@@ -73,7 +73,7 @@
   },
   {
     "name": "Black Sony Ps2 Dualshock 2",
-    "color": "Turquoise",
+    "description": "The analog controller(DUALSHOCK 2) is for use with the PlayStation 2, PS One, PlayStation Console. Some features are exclusively for use with PlayStation 2",
     "quantity": 12,
     "supplier_name": "Lemmy Le Marquis",
     "url": "https://i.ibb.co/VjJQ3Zp/pexels-photo-1579240.jpg",
@@ -81,7 +81,7 @@
   },
   {
     "name": "Black Apple Watch",
-    "color": "Goldenrod",
+    "description": "Starting at $399. 45mm or 41mm · Most crack-resistant front crystal; Certified IP6X dust resistantfootnote · Always-On Retina display. Nearly 20% larger than SE",
     "quantity": 1,
     "supplier_name": "Sephira Labrom",
     "url": "https://i.ibb.co/5MB2dQP/pexels-photo-440320.jpg",
@@ -89,7 +89,7 @@
   },
   {
     "name": "Panasonic NR-F681GT Refrigerators",
-    "color": "Green",
+    "description": "Using NR-F681GT with a temperature setting of the refrigerator is “2”. Ambient temperature: 32°C. Door opening/closing frequency: fridge compartment 39",
     "quantity": 2,
     "supplier_name": "Milton Cohrs",
     "url": "https://i.ibb.co/D5hthVn/photo-1630459065645-549fe5a56db4-ixlib-rb-1-2.jpg",
