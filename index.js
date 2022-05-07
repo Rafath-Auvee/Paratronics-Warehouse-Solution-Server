@@ -35,9 +35,15 @@ async function run() {
 
     //finding my items thorugh my email address
 
-    app.get("/myitem", async (req, res) => {
+    app.get("/myitems", async (req, res) => {
       const email = req.query.email;
+      const quantity = req.body;
+      console.log(">>>>>>>");
+      console.log(req.query);
+      console.log(">>>>>>>");
       console.log(email);
+      console.log(">>>>>>>");
+      console.log(quantity);
       const query = { email: email };
       const cursor = data.find(query);
       const orders = await cursor.toArray();
@@ -47,17 +53,18 @@ async function run() {
     // single product
     app.get(`/inventory/:id`, async (req, res) => {
       const id = req.params.id;
-      console.log(">>>>>>>>>>>>>>>>>>");
-      console.log(req);
-      console.log(">>>>>>>>>>>>>>>>>>");
-      console.log(req.params);
-      console.log(">>>>>>>>>>>>>>>>>>");
-      console.log(req.params.id);
-
       const query = { _id: ObjectId(id) };
       const product = await data.findOne(query);
-      // console.log(product);
       res.send(product);
+    });
+
+    //delete product
+
+    app.delete(`/inventory/:id`, async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const result = await data.deleteOne(query);
+      res.send(result);
     });
 
     //adding product
@@ -67,6 +74,22 @@ async function run() {
       const product = await data.insertOne(newProduct);
       res.send(product);
     });
+
+    // add+ deliver product
+    app.put(`/inventory/:id`,async(req,res)=>{
+      const id=req.params.id
+      const updatedProduct=req.body
+      const filter ={_id:ObjectId(id)}
+      const options = { upsert: true }
+      const updatedDoc={
+        $set:{
+          quantity: updatedProduct.quantity
+        }
+      }
+      const result=await data.updateOne(filter,updatedDoc,options)
+      res.send(result)
+    })
+
   } finally {
   }
 }
