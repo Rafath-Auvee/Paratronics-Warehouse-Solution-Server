@@ -83,7 +83,28 @@ async function run() {
       const options = { upsert: true }
       const updatedDoc={
         $set:{
-          quantity: updatedProduct.quantity
+          quantity: updatedProduct.quantity,
+        }
+      }
+      const result=await data.updateOne(filter,updatedDoc,options)
+      res.send(result)
+    })
+
+    app.put(`/editproduct/:id`,async(req,res)=>{
+      const id=req.params.id
+      const updatedProduct=req.body
+      const filter ={_id:ObjectId(id)}
+      const options = { upsert: true }
+      const updatedDoc={
+        $set:{
+          quantity: updatedProduct.quantity,
+          description: updatedProduct.description,
+          price: updatedProduct.price,
+          email: updatedProduct.email,
+          url: updatedProduct.url,
+          supplier_name: updatedProduct.supplier_name,
+          price: updatedProduct.price,
+          name: updatedProduct.name
         }
       }
       const result=await data.updateOne(filter,updatedDoc,options)
