@@ -3,6 +3,7 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const jwt = require('jsonwebtoken');
 // Middleware cors and express json
 app.use(cors());
 app.use(express.json());
@@ -10,6 +11,25 @@ app.use(express.json());
 require("dotenv").config();
 // Port
 const port = process.env.PORT || 5000;
+
+function verifyJWT(req, res, next) {
+  const authHeader = req.headers.authorization;
+  console.log(authHeader, req.headers.authorization)
+  if (!authHeader) {
+      return res.status(401).send({ message: 'unauthorized access' });
+  }
+  const token = authHeader.split(' ')[1];
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+      if (err) {
+          return res.status(403).send({ message: 'Forbidden access' });
+      }
+      console.log('decoded', decoded);
+      req.decoded = decoded;
+      next();
+  })
+}
+
+
 const uri = `mongodb+srv://${process.env.user}:${process.env.password}@cluster0.dgjpm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
@@ -24,30 +44,36 @@ async function run() {
     // all product
     app.get("/inventory", async (req, res) => {
       const query = {};
-      // console.log(">>>>>>>>>>>>>>>>>>")
-      // const email = req.query.email;
-      // console.log(email);
       const cursor = data.find(query);
       products = await cursor.toArray();
       res.send(products);
-      // console.log(query)
     });
 
     //finding my items thorugh my email address
 
-    app.get("/myitems", async (req, res) => {
+    // AUTH
+    app.post("/login", async (req, res) => {
+      const user = req.body;
+      const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+        expiresIn: "1d",
+      });
+      res.send({ accessToken });
+    });
+
+    app.get("/myitems", verifyJWT, async (req, res) => {
+      const decodedEmail = req.decoded.email;
       const email = req.query.email;
-      const quantity = req.body;
-      console.log(">>>>>>>");
-      console.log(req.query);
-      console.log(">>>>>>>");
-      console.log(email);
-      console.log(">>>>>>>");
-      console.log(quantity);
-      const query = { email: email };
-      const cursor = data.find(query);
-      const orders = await cursor.toArray();
-      res.send(orders);
+      console.log(decodedEmail, email)
+      if (email === decodedEmail) {
+        const quantity = req.body;
+        const query = { email: email };
+        const cursor = data.find(query);
+        const orders = await cursor.toArray();
+        res.send(orders);
+      }
+      else{
+          res.status(403).send({message: 'forbidden access'})
+      }
     });
 
     // single product
@@ -76,27 +102,27 @@ async function run() {
     });
 
     // add+ deliver product
-    app.put(`/inventory/:id`,async(req,res)=>{
-      const id=req.params.id
-      const updatedProduct=req.body
-      const filter ={_id:ObjectId(id)}
-      const options = { upsert: true }
-      const updatedDoc={
-        $set:{
+    app.put(`/inventory/:id`, async (req, res) => {
+      const id = req.params.id;
+      const updatedProduct = req.body;
+      const filter = { _id: ObjectId(id) };
+      const options = { upsert: true };
+      const updatedDoc = {
+        $set: {
           quantity: updatedProduct.quantity,
-        }
-      }
-      const result=await data.updateOne(filter,updatedDoc,options)
-      res.send(result)
-    })
+        },
+      };
+      const result = await data.updateOne(filter, updatedDoc, options);
+      res.send(result);
+    });
 
-    app.put(`/editproduct/:id`,async(req,res)=>{
-      const id=req.params.id
-      const updatedProduct=req.body
-      const filter ={_id:ObjectId(id)}
-      const options = { upsert: true }
-      const updatedDoc={
-        $set:{
+    app.put(`/editproduct/:id`, async (req, res) => {
+      const id = req.params.id;
+      const updatedProduct = req.body;
+      const filter = { _id: ObjectId(id) };
+      const options = { upsert: true };
+      const updatedDoc = {
+        $set: {
           quantity: updatedProduct.quantity,
           description: updatedProduct.description,
           price: updatedProduct.price,
@@ -104,13 +130,12 @@ async function run() {
           url: updatedProduct.url,
           supplier_name: updatedProduct.supplier_name,
           price: updatedProduct.price,
-          name: updatedProduct.name
-        }
-      }
-      const result=await data.updateOne(filter,updatedDoc,options)
-      res.send(result)
-    })
-
+          name: updatedProduct.name,
+        },
+      };
+      const result = await data.updateOne(filter, updatedDoc, options);
+      res.send(result);
+    });
   } finally {
   }
 }
