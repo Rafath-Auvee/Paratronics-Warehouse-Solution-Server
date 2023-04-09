@@ -10,7 +10,7 @@ app.use(express.json());
 // dotenv code
 require("dotenv").config();
 // Port
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 6500;
 
 function verifyJWT(req, res, next) {
   const authHeader = req.headers.authorization;
@@ -31,11 +31,13 @@ function verifyJWT(req, res, next) {
 
 
 const uri = `mongodb+srv://${process.env.user}:${process.env.password}@cluster0.dgjpm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+// console.log(uri);
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverApi: ServerApiVersion.v1,
 });
+
 async function run() {
   try {
     await client.connect();
@@ -140,7 +142,7 @@ async function run() {
   }
 }
 
-run().catch(console.dir);
+run().catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
   res.send("Paratronics Server is Running");
