@@ -40,7 +40,7 @@ const client = new MongoClient(uri, {
 
 const run = async () => {
   try {
-    // await client.connect();
+    await client.connect();
     const data = client.db("Paratronics").collection("products");
     console.log("DB Connected");
     // all product
