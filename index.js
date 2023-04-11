@@ -10,7 +10,7 @@ app.use(express.json());
 // dotenv code
 require("dotenv").config();
 // Port
-const port = process.env.PORT || 6500;
+const port = process.env.PORT || 5000;
 
 function verifyJWT(req, res, next) {
   const authHeader = req.headers.authorization;
@@ -40,7 +40,7 @@ const client = new MongoClient(uri, {
 
 const run = async () => {
   try {
-    await client.connect();
+    // await client.connect();
     const data = client.db("Paratronics").collection("products");
     console.log("DB Connected");
     // all product
