@@ -95,6 +95,8 @@ async function run() {
       res.send(result);
     });
 
+
+    
     //adding product
     app.post("/inventory", async (req, res) => {
       const newProduct = req.body;
