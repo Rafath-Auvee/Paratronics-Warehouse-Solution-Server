@@ -38,9 +38,9 @@ const client = new MongoClient(uri, {
   serverApi: ServerApiVersion.v1,
 });
 
-async function run() {
+const run = async () => {
   try {
-    await client.connect();
+    // await client.connect();
     const data = client.db("Paratronics").collection("products");
     console.log("DB Connected");
     // all product
